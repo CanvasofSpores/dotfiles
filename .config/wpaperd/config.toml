@@ -1,0 +1,9 @@
+[default]
+duration = "30m"
+mode = "center"
+sorting = "random"
+path = "~/Pictures/Wallpapers"
+
+[default.transition.cross-warp]
+
+
