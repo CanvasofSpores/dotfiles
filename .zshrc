@@ -81,9 +81,17 @@ plugins=(
   git
   zsh-autosuggestions
   zsh-syntax-highlighting
+  zsh-history-substring-search
+  command-not-found
+  zoxide
+  fzf
 )
 
-source $ZSH/oh-my-zsh.sh
+ZOXIDE_CMD_OVERRIDE="cd"
+
+fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
+autoload -U compinit && compinit
+source "$ZSH/oh-my-zsh.sh"
 
 # User configuration
 
