@@ -129,18 +129,7 @@ fi
 # For a full list of active aliases, run `alias`.
 #
 # Aliases
-
-alias wallpaperengine="hyprctl dispatch -- exec __GL_THREADED_OPTIMIZATIONS=0 linux-wallpaperengine --silent --fps 30 --screen-root HDMI-A-1 --screen-root DP-2"
-
-# https://github.com/Notenlish/anifetch
-alias anifetch="python3 '$HOME/.local/share/anifetch/anifetch.py' --fast-fetch -W 112 -H 63 -f '$HOME/.local/share/anifetch/katana-zero.gif' -c '--symbols narrow'"
-
-# dotfiles
 alias dotfiles="git dotfiles"
-
-alias here="eza -alb --group-directories-first --no-permissions --no-user --no-time"
-
-
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
