@@ -1,10 +1,11 @@
 [Added Associations]
 application/vnd.ms-publisher=nvim.desktop;
+application/zip=org.kde.ark.desktop;
 text/plain=nvim.desktop;
 text/x-csrc=nvim.desktop;
+x-scheme-handler/chrome=zen.desktop;
 x-scheme-handler/http=zen.desktop;
 x-scheme-handler/https=zen.desktop;
-x-scheme-handler/chrome=zen.desktop;
 
 [Default Applications]
 application/vnd.ms-publisher=nvim.desktop;
@@ -14,6 +15,7 @@ application/x-extension-shtml=zen.desktop
 application/x-extension-xht=zen.desktop
 application/x-extension-xhtml=zen.desktop
 application/xhtml+xml=zen.desktop
+application/zip=org.kde.ark.desktop;
 inode/directory=org.kde.dolphin.desktop
 text/html=zen.desktop
 text/plain=nvim.desktop;

@@ -1,10 +1,3 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 
@@ -15,7 +8,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time Oh My Zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="powerlevel10k/powerlevel10k"
+ZSH_THEME=""
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -89,6 +82,7 @@ plugins=(
   sudo
   zsh-interactive-cd
   autoupdate
+#  transient-prompt
 )
 
 ZOXIDE_CMD_OVERRIDE="cd"
@@ -131,5 +125,68 @@ fi
 # Aliases
 alias dotfiles="git dotfiles"
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+precmd() { export LAST_EXIT_CODE=$? }
+
+
+# ZSH Config goes above this line.
+
+#eval "$(oh-my-posh init zsh --config '~/.config/omp.json')"
+eval "$(starship init zsh)"
+
+precmd_functions=(zvm_init "${(@)precmd_functions:#zvm_init}")
+precmd_functions+=(set-long-prompt)
+zvm_after_init_commands+=("zle -N zle-line-finish; zle-line-finish() { set-short-prompt }")
+
+set-long-prompt() {
+    PROMPT=$(starship prompt)
+    RPROMPT="$(starship prompt --right)"
+}
+
+export COLUMNS=$(($COLUMNS + ($COLUMNS*0.1)))
+set-short-prompt() {
+  if [[ $PROMPT != '%# ' ]]; then
+    PROMPT="$(starship prompt --profile transient)"
+    RPROMPT=""
+    zle .reset-prompt 2>/dev/null # hide the errors on ctrl+c
+  fi
+}
+zle-keymap-select() {
+    set-short-prompt
+}
+zle -N zle-keymap-select
+
+zle-line-finish() { set-short-prompt }
+zle -N zle-line-finish
+
+trap 'set-short-prompt; return 130' INT
+
+# try to fix vi mode indication (not working 100%)
+zvm_after_init_commands+=('
+  function zle-keymap-select() {
+    if [[ ${KEYMAP} == vicmd ]] ||
+       [[ $1 = "block" ]]; then
+      echo -ne "\e[1 q"
+      STARSHIP_KEYMAP=vicmd
+    elif [[ ${KEYMAP} == main ]] ||
+         [[ ${KEYMAP} == viins ]] ||
+         [[ ${KEYMAP} = "" ]] ||
+         [[ $1 = "beam" ]]; then
+      echo -ne "\e[5 q"
+      STARSHIP_KEYMAP=viins
+    fi
+    zle reset-prompt
+  }
+  zle -N zle-keymap-select
+
+  # Ensure vi mode is set
+  zle-line-init() {
+    zle -K viins
+    echo -ne "\e[5 q"
+  }
+  zle -N zle-line-init
+')
+
+
+
+
+clear

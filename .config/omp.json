@@ -1,0 +1,170 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "palette": {
+        "rosewater": "#f5e0dc",
+        "flamingo": "#f2cdcd",
+        "pink": "#f5c2e7",
+        "mauve": "#cba6f7",
+        "red": "#f38ba8",
+        "maroon": "#eba0ac",
+        "peach": "#fab387",
+        "yellow": "#f9e2af",
+        "green": "#a6e3a1",
+        "teal": "#94e2d5",
+        "sky": "#89dceb",
+        "blue": "#89b4fa",
+        "lavender": "#b4befe",
+        "text": "#cdd6f4",
+        "subtext1": "#bac2de",
+        "subtext0": "#a6adc8",
+        "overlay2": "#9399b2",
+        "overlay1": "#7f849c",
+        "overlay0": "#6c7086",
+        "surface2": "#585b70",
+        "surface1": "#45475a",
+        "surface0": "#313244",
+        "base": "#1e1e2e",
+        "mantle": "#181825",
+        "crust": "#11111b"
+  },
+  "blocks": [
+    {
+      "alignment": "left",
+      "segments": [
+        {
+          "type": "status",
+          "style": "diamond",
+          "foreground": "p:base",
+          "background": "p:red",
+          "background_templates": [
+            "{{ if .Error }}{{ end }}"
+          ],
+          "leading_diamond": "",
+          "trailing_diamond": "",
+          "template": ""
+        },
+        {
+          "type": "status",
+          "style": "diamond",
+          "foreground": "p:text",
+          "background": "p:surface0",
+          "background_templates": [
+            "{{ if .Error }}{{ end }}"
+          ],
+          "leading_diamond": "",
+          "trailing_diamond": " ",
+          "template": " {{ .Code }} " 
+        },
+        {
+          "type": "text",
+          "style": "diamond",
+          "foreground": "p:base",
+          "background": "p:mauve",
+          "leading_diamond": "",
+          "trailing_diamond": "",
+          "template": ""
+        },
+        {
+          "type": "path",
+          "style": "diamond",
+          "foreground": "p:text",
+          "background": "p:surface0",
+          "leading_diamond": "",
+          "trailing_diamond": " "
+        }
+      ],
+      "type": "prompt"
+    },
+    {
+      "alignment": "left",
+      "segments": [
+        {
+          "foreground": "#6C6C6C",
+          "properties": {
+            "branch_ahead_icon": "<#88C0D0>\u21e1 </>",
+            "branch_behind_icon": "<#88C0D0>\u21e3 </>",
+            "branch_icon": "",
+            "fetch_status": true,
+            "fetch_upstream_icon": true,
+            "github_icon": ""
+          },
+          "style": "plain",
+          "template": "{{ .UpstreamIcon }}{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }}<#FFAFD7>*</>{{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }} \ueb4b {{ .StashCount }}{{ end }} ",
+          "type": "git"
+        }
+      ],
+      "type": "prompt"
+    },
+    {
+      "alignment": "left",
+      "segments": [
+        {
+          "type": "executiontime",
+          "style": "diamond",
+          "foreground": "p:base",
+          "background": "p:peach",
+          "leading_diamond": "",
+          "trailing_diamond": "",
+          "template": "󱦟"
+        },
+        {
+          "type": "executiontime",
+          "alias": "executiontime",
+          "style": "diamond",
+          "foreground": "p:text",
+          "background": "p:surface0",
+          "properties": {
+            "style": "austin"
+          },
+          "leading_diamond": "",
+          "trailing_diamond": " ",
+          "template": ""
+        }
+      ],
+      "type": "prompt"
+    },
+    {
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "foreground": "#B48EAD",
+          "foreground_templates": [
+            "{{ if gt .Code 0 }}#BF616A{{ end }}"
+          ],
+          "properties": {
+            "always_enabled": true
+          },
+          "style": "plain",
+          "template": "\u276f ",
+          "type": "status"
+        }
+      ],
+      "type": "prompt"
+    },
+    {
+      "alignment": "right",
+      "segments": [
+        {
+          "type": "command",
+          "style": "plain",
+          "foreground": "p:pink",
+          "properties": {
+            "shell": "bash",
+            "command": "mommy -1 -s $LAST_EXIT_CODE | cat"
+          }
+        }
+      ],
+      "type": "rprompt"
+    }
+  ],
+  "console_title_template": "{{if .Root}}(Admin){{end}} {{.PWD}}",
+  "transient_prompt": {
+    "foreground": "#B48EAD",
+    "foreground_templates": [
+      "{{ if gt .Code 0 }}#BF616A{{ end }}"
+    ],
+    "template": "\u276f "
+  },
+  "version": 3
+}
