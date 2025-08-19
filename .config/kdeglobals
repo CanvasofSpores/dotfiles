@@ -32,3 +32,6 @@ MaximumRemoteSize=0
 
 [UiSettings]
 ColorScheme=Catppuccin-Mocha-Lavender
+
+[Colors:View]
+BackgroundNormal=#1E1E2E

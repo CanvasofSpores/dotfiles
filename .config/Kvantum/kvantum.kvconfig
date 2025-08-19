@@ -1,5 +1,5 @@
 [General]
-theme=catppuccin-mocha-lavender#
+theme=catppuccin-mocha-mauve
 
 [Applications]
-catppuccin-mocha-lavender%23=dolphin
+catppuccin-mocha-mauve=dolphin

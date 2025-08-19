@@ -70,26 +70,8 @@ ENABLE_CORRECTION="true"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(
-  git
-  zsh-autosuggestions
-  zsh-syntax-highlighting
-  zsh-history-substring-search
-  command-not-found
-  zoxide
-  fzf
-  eza
-  sudo
-  zsh-interactive-cd
-  autoupdate
-#  transient-prompt
-)
 
-ZOXIDE_CMD_OVERRIDE="cd"
-
-# Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=13
-ZSH_CUSTOM_AUTOUPDATE_QUIET=true
+eval "$(zoxide init zsh)"
 
 fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
 autoload -U compinit && compinit
@@ -107,8 +89,8 @@ if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='/usr/bin/nvim'
   export VISUAL='/usr/bin/nvim'
 else
-  export EDITOR='/usr/bin/nvim'
-  export VISUAL='/usr/bin/nvim'
+#  export EDITOR='/usr/bin/nvim'
+#  export VISUAL='/usr/bin/nvim'
 fi
 
 # Compilation flags
