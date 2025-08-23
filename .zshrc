@@ -133,3 +133,4 @@ zvm_after_init_commands+=('
 
 
 clear
+fastfetch
