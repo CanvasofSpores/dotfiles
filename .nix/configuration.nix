@@ -284,7 +284,7 @@
     temurin-jre-bin 
     syncthingtray
     networkmanagerapplet
-
+    libnotify
   ];
 
 
