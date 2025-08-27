@@ -25,7 +25,7 @@
     };
     supportedFilesystems = [ "btrfs" ];
       # Use latest kernel.
-    kernelPackages = pkgs.linuxPackages_cachyos.cachyOverride { mArch = "GENERIC_V3"; };
+    kernelPackages = pkgs.linuxPackages_zen;
     kernel.sysctl = {
       "vm.max_map_count" = 16777216;
       "fs.file-max" = 524288;
@@ -42,12 +42,12 @@
   hardware.graphics.enable = true;
   hardware.nvidia = {
     package = config.boot.kernelPackages.nvidiaPackages.mkDriver {
-      version = "580.65.06";
-      sha256_64bit = "sha256-BLEIZ69YXnZc+/3POe1fS9ESN1vrqwFy6qGHxqpQJP8=";
-      sha256_aarch64 = "sha256-4CrNwNINSlQapQJr/dsbm0/GvGSuOwT/nLnIknAM+cQ=";
-      openSha256 = "sha256-BKe6LQ1ZSrHUOSoV6UCksUE0+TIa0WcCHZv4lagfIgA=";
-      settingsSha256 = "sha256-9PWmj9qG/Ms8Ol5vLQD3Dlhuw4iaFtVHNC0hSyMCU24=";
-      persistencedSha256 = "sha256-ETRfj2/kPbKYX1NzE0dGr/ulMuzbICIpceXdCRDkAxA=";
+      version = "580.76.05";
+      sha256_64bit = "sha256-IZvmNrYJMbAhsujB4O/4hzY8cx+KlAyqh7zAVNBdl/0=";
+      sha256_aarch64 = "sha256-NL2DswzVWQQMVM092NmfImqKbTk9VRgLL8xf4QEvGAQ=";
+      openSha256 = "sha256-xEPJ9nskN1kISnSbfBigVaO6Mw03wyHebqQOQmUg/eQ=";
+      settingsSha256 = "sha256-ll7HD7dVPHKUyp5+zvLeNqAb6hCpxfwuSyi+SAXapoQ=";
+      persistencedSha256 = "sha256-bs3bUi8LgBu05uTzpn2ugcNYgR5rzWEPaTlgm0TIpHY=";
     };
     videoAcceleration = true;
 
@@ -195,6 +195,7 @@
 
   environment.sessionVariables = {
     NIXOS_OZONE_WL = "1";
+    PROTON_ENABLE_WAYLAND = "1";
   };
 
   environment.systemPackages = with pkgs; [
@@ -212,7 +213,7 @@
     hypridle
     hyprshot
     hyprcursor
-    swaynotificationcenter
+    dunst
     rofi-wayland
     grim
     grimblast
@@ -220,6 +221,10 @@
     swappy
     fastfetch
     dconf
+    glib
+    sassc
+    gtk-engine-murrine
+    gnome-themes-extra
     hyprland-qtutils
     hyprland-qt-support
     hyprpolkitagent
@@ -285,6 +290,7 @@
     syncthingtray
     networkmanagerapplet
     libnotify
+    nvidia-vaapi-driver
   ];
 
 

@@ -17,15 +17,19 @@
     catppuccin.url = "github:catppuccin/nix";
   };
 
-  outputs = { self, nixpkgs, chaotic, catppuccin, spicetify-nix, ...}@inputs:
+  outputs = { self, nixpkgs, chaotic, catppuccin, spicetify-nix, nix-gaming, ...}@inputs:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
       spicepkgs = inputs.spicetify-nix.legacyPackages.${pkgs.stdenv.system};
+      nix-gaming = inputs.nix-gaming.packages.${pkgs.system};
     in {
     # NixOS Setup
     nixosConfigurations.NixCanvas = nixpkgs.lib.nixosSystem {
       inherit system;
+      specialArgs = {
+        inherit nix-gaming;
+      };
       modules = [
         ./configuration.nix
 	      catppuccin.nixosModules.catppuccin

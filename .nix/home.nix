@@ -14,23 +14,6 @@
     enable = true;
     flavor = "mocha";
     accent = "lavender";
-#    grub = { enable = true; };
-#    sddm = { enable = true; };
-#    tty = { enable = true; };
-#    btop = { enable = true; };
-#    firefox = { enable = true; };
-#    hyprland = { enable = true; };
-#    cursors = { enable = true; };
-#    gtk = { enable = true; };
-#    qt = { enable = true; };
-#    kvantum = { enable = true; };
-#    kitty = { enable = true; };
-#    mangohud = { enable = true; };
-#    nvim = { enable = true; };
-#    swaylock = { enable = true; };
-#    swaync = { enable = true; };
-#    zsh-syntax-highlighting = { enable = true; };
-
   };
 
   programs.spicetify = {
@@ -58,7 +41,6 @@
     windowManagerPatch = true;
   };
 
-  services.swaync.enable = true;
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
