@@ -30,3 +30,5 @@ x-scheme-handler/https=zen.desktop
 x-scheme-handler/ror2mm=r2modman.desktop
 x-scheme-handler/tg=org.telegram.desktop.desktop
 x-scheme-handler/tonsite=org.telegram.desktop.desktop
+x-scheme-handler/wootwoot=wootility.desktop
+x-scheme-handler/web+wootwoot=chromium-browser.desktop

@@ -262,6 +262,8 @@
     pavucontrol
     catppuccin-cursors.mochaMauve
     protonup-qt
+    protontricks
+    freetype
     steam-run
     lutris
     heroic
@@ -291,6 +293,9 @@
     networkmanagerapplet
     libnotify
     nvidia-vaapi-driver
+    wooting-udev-rules
+    playerctl
+    ungoogled-chromium
   ];
 
 
