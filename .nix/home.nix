@@ -38,6 +38,7 @@
       spinningCdCoverArt
       removeTheArtistsAndCreditsSectionsFromTheSidebar
     ];
+    wayland = true;
     windowManagerPatch = true;
   };
 
