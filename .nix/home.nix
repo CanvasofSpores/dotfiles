@@ -19,7 +19,7 @@
   programs.spicetify = {
     enable = true;
     #config options
-    theme = spicepkgs.themes.dribbblishDynamic;
+    theme = spicepkgs.themes.defaultDynamic;
     enabledExtensions = with spicepkgs.extensions; [
       shuffle
       playingSource

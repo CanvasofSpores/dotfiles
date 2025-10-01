@@ -21,6 +21,7 @@
         efiSupport = true;
         useOSProber = true;
         configurationLimit = 10;
+        default = 0;
       };
     };
     supportedFilesystems = [ "btrfs" ];
@@ -250,6 +251,7 @@
     libsForQt5.qtstyleplugin-kvantum
     nwg-look
     udiskie
+    grub2
     git
     btop
     starship
