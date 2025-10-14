@@ -13,7 +13,7 @@
 }
 {
     "label" : "windows",
-    "action" : "sudo grub-reboot 'Windows Boot Manager (on /dev/nvme1n1p1)' && systemctl reboot",
+    "action" : "pkexec /usr/sbin/grub-reboot 'Windows Boot Manager (on /dev/nvme1n1p1)' && systemctl reboot",
     "text" : "Reboot to Windows",
     "keybind" : "w"
 }
