@@ -12,6 +12,12 @@
     "keybind" : "e"
 }
 {
+    "label" : "windows",
+    "action" : "sudo grub-reboot 'Windows Boot Manager (on /dev/nvme1n1p1)' && systemctl reboot",
+    "text" : "Reboot to Windows",
+    "keybind" : "w"
+}
+{
     "label" : "reboot",
     "action" : "systemctl reboot",
     "text" : "Reboot",
