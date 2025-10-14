@@ -22,7 +22,9 @@ plugins=(
   git
   zsh-autosuggestions
   zsh-syntax-highlighting
+  fast-syntax-highlighting
   zsh-history-substring-search
+  zsh-autocomplete
   command-not-found
   zoxide
   fzf
@@ -35,6 +37,8 @@ plugins=(
 ZOXIDE_CMD_OVERRIDE="cd"
 ZSH_CUSTOM_AUTOUPDATE_QUIET=true
 
+# Set up fzf key bindings and fuzzy completion
+source <(fzf --zsh)
 eval "$(zoxide init zsh)"
 
 fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
@@ -60,13 +64,6 @@ fi
 
 # Aliases
 alias dotfiles="git dotfiles"
-
-alias nix-gc="sudo nix-collect-garbage -d"
-alias nix-rebuild="sudo nixos-rebuild switch --flake $HOME/.nix"
-alias home-rebuild="home-manager switch --flake $HOME/.nix"
-alias flake-update="sudo nix flake update --flake $HOME/.nix"
-
-
 
 
 # ZSH Config goes above this line.
