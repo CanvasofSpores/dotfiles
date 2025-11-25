@@ -47,6 +47,7 @@ source "$ZSH/oh-my-zsh.sh"
 
 # User configuration
 
+
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='/usr/bin/nvim'
@@ -64,6 +65,7 @@ fi
 
 # Aliases
 alias dotfiles="git dotfiles"
+alias ssh="kitty +kitten ssh"
 
 
 # ZSH Config goes above this line.
@@ -131,3 +133,5 @@ zvm_after_init_commands+=('
 
 clear
 fastfetch
+
+export PATH=$PATH:/home/canvas/.spicetify
