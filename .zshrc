@@ -63,9 +63,13 @@ fi
 # - $ZSH_CUSTOM/macos.zsh
 # For a full list of active aliases, run `alias`.
 
-# Aliases
+# Aliases and Functions
 alias dotfiles="git dotfiles"
 alias ssh="kitty +kitten ssh"
+
+vencordup() {
+  sh -c "$(curl -sS https://vencord.dev/install.sh)"
+}
 
 
 # ZSH Config goes above this line.
