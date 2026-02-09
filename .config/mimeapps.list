@@ -16,6 +16,12 @@ application/x-extension-shtml=firefox.desktop;zen.desktop;
 application/xhtml+xml=firefox.desktop;zen.desktop;
 application/x-extension-xhtml=firefox.desktop;zen.desktop;
 application/x-extension-xht=firefox.desktop;zen.desktop;
+image/vnd.zbrush.pcx=nvim.desktop;
+application/json=nvim.desktop;
+application/java-archive=org.kde.ark.desktop;
+application/octet-stream=nvim.desktop;
+application/pdf=zen.desktop;
+application/x-shellscript=nvim.desktop;
 
 [Default Applications]
 application/vnd.ms-publisher=nvim.desktop;
@@ -39,3 +45,4 @@ x-scheme-handler/tg=org.telegram.desktop.desktop
 x-scheme-handler/tonsite=org.telegram.desktop.desktop
 x-scheme-handler/wootwoot=wootility.desktop
 x-scheme-handler/web+wootwoot=chromium-browser.desktop
+application/octet-stream=nvim.desktop
