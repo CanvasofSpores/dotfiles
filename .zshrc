@@ -13,6 +13,15 @@ ZSH_THEME=""
 # Uncomment the following line to enable command auto-correction.
 ENABLE_CORRECTION="true"
 
+# Add anything to $PATH here
+typeset -U path
+path+=(
+  /home/canvas/.spicetify
+  /home/canvas/.cargo/bin
+  /home/canvas/.config/rofi/scripts
+  /home/canvas/.local/bin/
+)
+
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
@@ -66,6 +75,7 @@ fi
 # Aliases and Functions
 alias dotfiles="git dotfiles"
 alias ssh="kitty +kitten ssh"
+alias whatismyip="curl icanhazip.com"
 
 vencordup() {
   sh -c "$(curl -sS https://vencord.dev/install.sh)"
@@ -137,5 +147,3 @@ zvm_after_init_commands+=('
 
 clear
 fastfetch
-
-export PATH=$PATH:/home/canvas/.spicetify

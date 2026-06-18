@@ -12,16 +12,15 @@ window {
 button {
   background-repeat: no-repeat;
   background-position: center;
-  border: none;
   font-size: 0px;
-  padding-top: 100px;
-  padding-bottom: 100px;
+  padding: 100px 0px;
   background-size: 25%;
 	color: #cad3f5;
   text-shadow: none;
-  border-radius: 20px 20px 20px 20px;
+  border: 50px;
+  border-radius: 20px;
   background-color: rgba(53, 57, 75, 0.3);
-  margin: 8px;
+  margin: 20px;
   transition: box-shadow 0.2s ease-in-out, background-color 0.2s ease-in-out;
 }
 
@@ -48,4 +47,8 @@ button:active, button:hover {
 
 #windows {
   background-image: image(url("/home/canvas/.config/wlogout/icons/windows.svg"));
+}
+
+#nixos {
+  background-image: image(url("/home/canvas/.config/wlogout/icons/nixos.svg"));
 }

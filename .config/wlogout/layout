@@ -18,6 +18,12 @@
     "keybind" : "w"
 }
 {
+    "label" : "nixos",
+    "action" : "pkexec /usr/sbin/grub-reboot 'NixOS>NixOS' && systemctl reboot",
+    "text" : "Reboot to NixOS",
+    "keybind" : "n"
+}
+{
     "label" : "reboot",
     "action" : "systemctl reboot",
     "text" : "Reboot",

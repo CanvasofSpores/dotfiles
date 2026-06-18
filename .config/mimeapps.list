@@ -23,6 +23,7 @@ application/octet-stream=nvim.desktop;
 application/pdf=zen.desktop;
 application/x-shellscript=nvim.desktop;
 
+
 [Default Applications]
 application/vnd.ms-publisher=nvim.desktop;
 application/x-extension-htm=zen.desktop
